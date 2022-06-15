@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var content = ContentViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Color.theme.background.ignoresSafeArea(.all)
+            HomeView()
+                .environmentObject(content)
+        }
+        .statusBar(hidden: true)
     }
 }
 

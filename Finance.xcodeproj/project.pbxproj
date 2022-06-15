@@ -11,6 +11,38 @@
 		F6C8D1C2285A3577007E5EDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1C1285A3577007E5EDF /* ContentView.swift */; };
 		F6C8D1C4285A3578007E5EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C8D1C3285A3578007E5EDF /* Assets.xcassets */; };
 		F6C8D1C7285A3578007E5EDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C8D1C6285A3578007E5EDF /* Preview Assets.xcassets */; };
+		F6C8D1F7285A35A5007E5EDF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1CE285A35A5007E5EDF /* Date.swift */; };
+		F6C8D1F8285A35A5007E5EDF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1CF285A35A5007E5EDF /* View.swift */; };
+		F6C8D1F9285A35A5007E5EDF /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D0285A35A5007E5EDF /* Alignment.swift */; };
+		F6C8D1FA285A35A5007E5EDF /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D1285A35A5007E5EDF /* Decimal.swift */; };
+		F6C8D1FB285A35A5007E5EDF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D2285A35A5007E5EDF /* String.swift */; };
+		F6C8D1FC285A35A5007E5EDF /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D3285A35A5007E5EDF /* UIApplication.swift */; };
+		F6C8D1FD285A35A5007E5EDF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D4285A35A5007E5EDF /* Color.swift */; };
+		F6C8D1FE285A35A5007E5EDF /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D7285A35A5007E5EDF /* ContentViewModel.swift */; };
+		F6C8D1FF285A35A5007E5EDF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1D9285A35A5007E5EDF /* Config.swift */; };
+		F6C8D200285A35A5007E5EDF /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1DB285A35A5007E5EDF /* MyDatePicker.swift */; };
+		F6C8D201285A35A5007E5EDF /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1DC285A35A5007E5EDF /* Separator.swift */; };
+		F6C8D202285A35A5007E5EDF /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1DD285A35A5007E5EDF /* MyTextField.swift */; };
+		F6C8D203285A35A5007E5EDF /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1DF285A35A5007E5EDF /* BudgetModel.swift */; };
+		F6C8D204285A35A5007E5EDF /* InvoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E0285A35A5007E5EDF /* InvoiceModel.swift */; };
+		F6C8D205285A35A5007E5EDF /* AdderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E3285A35A5007E5EDF /* AdderView.swift */; };
+		F6C8D206285A35A5007E5EDF /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E4285A35A5007E5EDF /* SlideView.swift */; };
+		F6C8D207285A35A5007E5EDF /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E5285A35A5007E5EDF /* CoverView.swift */; };
+		F6C8D208285A35A5007E5EDF /* ArchivedBudgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E6285A35A5007E5EDF /* ArchivedBudgetsView.swift */; };
+		F6C8D209285A35A5007E5EDF /* PieTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E7285A35A5007E5EDF /* PieTotalView.swift */; };
+		F6C8D20A285A35A5007E5EDF /* BudgetOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E8285A35A5007E5EDF /* BudgetOrderView.swift */; };
+		F6C8D20B285A35A5007E5EDF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1E9285A35A5007E5EDF /* HeaderView.swift */; };
+		F6C8D20C285A35A5007E5EDF /* ArchivedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1EA285A35A5007E5EDF /* ArchivedView.swift */; };
+		F6C8D20D285A35A5007E5EDF /* EditerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1EB285A35A5007E5EDF /* EditerView.swift */; };
+		F6C8D20E285A35A5007E5EDF /* CreaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1EC285A35A5007E5EDF /* CreaterView.swift */; };
+		F6C8D20F285A35A5007E5EDF /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1ED285A35A5007E5EDF /* DeleteView.swift */; };
+		F6C8D210285A35A5007E5EDF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1EE285A35A5007E5EDF /* SettingView.swift */; };
+		F6C8D211285A35A5007E5EDF /* InvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1F0285A35A5007E5EDF /* InvoiceView.swift */; };
+		F6C8D212285A35A5007E5EDF /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1F1285A35A5007E5EDF /* BudgetView.swift */; };
+		F6C8D213285A35A5007E5EDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1F2285A35A5007E5EDF /* HomeView.swift */; };
+		F6C8D214285A35A5007E5EDF /* FocusField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1F4285A35A5007E5EDF /* FocusField.swift */; };
+		F6C8D215285A35A5007E5EDF /* Repeated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1F5285A35A5007E5EDF /* Repeated.swift */; };
+		F6C8D216285A35A5007E5EDF /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8D1F6285A35A5007E5EDF /* CardColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +51,38 @@
 		F6C8D1C1285A3577007E5EDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F6C8D1C3285A3578007E5EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6C8D1C6285A3578007E5EDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F6C8D1CE285A35A5007E5EDF /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F6C8D1CF285A35A5007E5EDF /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F6C8D1D0285A35A5007E5EDF /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
+		F6C8D1D1285A35A5007E5EDF /* Decimal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
+		F6C8D1D2285A35A5007E5EDF /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F6C8D1D3285A35A5007E5EDF /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		F6C8D1D4285A35A5007E5EDF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F6C8D1D7285A35A5007E5EDF /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		F6C8D1D9285A35A5007E5EDF /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F6C8D1DB285A35A5007E5EDF /* MyDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
+		F6C8D1DC285A35A5007E5EDF /* Separator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		F6C8D1DD285A35A5007E5EDF /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		F6C8D1DF285A35A5007E5EDF /* BudgetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
+		F6C8D1E0285A35A5007E5EDF /* InvoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceModel.swift; sourceTree = "<group>"; };
+		F6C8D1E3285A35A5007E5EDF /* AdderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdderView.swift; sourceTree = "<group>"; };
+		F6C8D1E4285A35A5007E5EDF /* SlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
+		F6C8D1E5285A35A5007E5EDF /* CoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
+		F6C8D1E6285A35A5007E5EDF /* ArchivedBudgetsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivedBudgetsView.swift; sourceTree = "<group>"; };
+		F6C8D1E7285A35A5007E5EDF /* PieTotalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieTotalView.swift; sourceTree = "<group>"; };
+		F6C8D1E8285A35A5007E5EDF /* BudgetOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetOrderView.swift; sourceTree = "<group>"; };
+		F6C8D1E9285A35A5007E5EDF /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F6C8D1EA285A35A5007E5EDF /* ArchivedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivedView.swift; sourceTree = "<group>"; };
+		F6C8D1EB285A35A5007E5EDF /* EditerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditerView.swift; sourceTree = "<group>"; };
+		F6C8D1EC285A35A5007E5EDF /* CreaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreaterView.swift; sourceTree = "<group>"; };
+		F6C8D1ED285A35A5007E5EDF /* DeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
+		F6C8D1EE285A35A5007E5EDF /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F6C8D1F0285A35A5007E5EDF /* InvoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceView.swift; sourceTree = "<group>"; };
+		F6C8D1F1285A35A5007E5EDF /* BudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
+		F6C8D1F2285A35A5007E5EDF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F6C8D1F4285A35A5007E5EDF /* FocusField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusField.swift; sourceTree = "<group>"; };
+		F6C8D1F5285A35A5007E5EDF /* Repeated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repeated.swift; sourceTree = "<group>"; };
+		F6C8D1F6285A35A5007E5EDF /* CardColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +115,9 @@
 		F6C8D1BE285A3576007E5EDF /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F6C8D1F3285A35A5007E5EDF /* Enum */,
+				F6C8D1CD285A35A5007E5EDF /* Extension */,
+				F6C8D1D5285A35A5007E5EDF /* Internal */,
 				F6C8D1BF285A3577007E5EDF /* FinanceApp.swift */,
 				F6C8D1C1285A3577007E5EDF /* ContentView.swift */,
 				F6C8D1C3285A3578007E5EDF /* Assets.xcassets */,
@@ -65,6 +132,115 @@
 				F6C8D1C6285A3578007E5EDF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F6C8D1CD285A35A5007E5EDF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1CE285A35A5007E5EDF /* Date.swift */,
+				F6C8D1CF285A35A5007E5EDF /* View.swift */,
+				F6C8D1D0285A35A5007E5EDF /* Alignment.swift */,
+				F6C8D1D1285A35A5007E5EDF /* Decimal.swift */,
+				F6C8D1D2285A35A5007E5EDF /* String.swift */,
+				F6C8D1D3285A35A5007E5EDF /* UIApplication.swift */,
+				F6C8D1D4285A35A5007E5EDF /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F6C8D1D5285A35A5007E5EDF /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1D6285A35A5007E5EDF /* ViewModel */,
+				F6C8D1D8285A35A5007E5EDF /* Config */,
+				F6C8D1DA285A35A5007E5EDF /* Component */,
+				F6C8D1DE285A35A5007E5EDF /* Model */,
+				F6C8D1E1285A35A5007E5EDF /* View */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		F6C8D1D6285A35A5007E5EDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1D7285A35A5007E5EDF /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6C8D1D8285A35A5007E5EDF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1D9285A35A5007E5EDF /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F6C8D1DA285A35A5007E5EDF /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1DB285A35A5007E5EDF /* MyDatePicker.swift */,
+				F6C8D1DC285A35A5007E5EDF /* Separator.swift */,
+				F6C8D1DD285A35A5007E5EDF /* MyTextField.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F6C8D1DE285A35A5007E5EDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1DF285A35A5007E5EDF /* BudgetModel.swift */,
+				F6C8D1E0285A35A5007E5EDF /* InvoiceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F6C8D1E1285A35A5007E5EDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1E2285A35A5007E5EDF /* Home */,
+				F6C8D1F2285A35A5007E5EDF /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6C8D1E2285A35A5007E5EDF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1E3285A35A5007E5EDF /* AdderView.swift */,
+				F6C8D1E4285A35A5007E5EDF /* SlideView.swift */,
+				F6C8D1E5285A35A5007E5EDF /* CoverView.swift */,
+				F6C8D1E6285A35A5007E5EDF /* ArchivedBudgetsView.swift */,
+				F6C8D1E7285A35A5007E5EDF /* PieTotalView.swift */,
+				F6C8D1E8285A35A5007E5EDF /* BudgetOrderView.swift */,
+				F6C8D1E9285A35A5007E5EDF /* HeaderView.swift */,
+				F6C8D1EA285A35A5007E5EDF /* ArchivedView.swift */,
+				F6C8D1EB285A35A5007E5EDF /* EditerView.swift */,
+				F6C8D1EC285A35A5007E5EDF /* CreaterView.swift */,
+				F6C8D1ED285A35A5007E5EDF /* DeleteView.swift */,
+				F6C8D1EE285A35A5007E5EDF /* SettingView.swift */,
+				F6C8D1EF285A35A5007E5EDF /* Budget */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F6C8D1EF285A35A5007E5EDF /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1F0285A35A5007E5EDF /* InvoiceView.swift */,
+				F6C8D1F1285A35A5007E5EDF /* BudgetView.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		F6C8D1F3285A35A5007E5EDF /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8D1F4285A35A5007E5EDF /* FocusField.swift */,
+				F6C8D1F5285A35A5007E5EDF /* Repeated.swift */,
+				F6C8D1F6285A35A5007E5EDF /* CardColor.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +313,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C8D1FC285A35A5007E5EDF /* UIApplication.swift in Sources */,
+				F6C8D205285A35A5007E5EDF /* AdderView.swift in Sources */,
+				F6C8D20D285A35A5007E5EDF /* EditerView.swift in Sources */,
+				F6C8D216285A35A5007E5EDF /* CardColor.swift in Sources */,
+				F6C8D20E285A35A5007E5EDF /* CreaterView.swift in Sources */,
+				F6C8D211285A35A5007E5EDF /* InvoiceView.swift in Sources */,
+				F6C8D202285A35A5007E5EDF /* MyTextField.swift in Sources */,
+				F6C8D1F9285A35A5007E5EDF /* Alignment.swift in Sources */,
+				F6C8D203285A35A5007E5EDF /* BudgetModel.swift in Sources */,
+				F6C8D1F8285A35A5007E5EDF /* View.swift in Sources */,
+				F6C8D20C285A35A5007E5EDF /* ArchivedView.swift in Sources */,
+				F6C8D206285A35A5007E5EDF /* SlideView.swift in Sources */,
+				F6C8D207285A35A5007E5EDF /* CoverView.swift in Sources */,
 				F6C8D1C2285A3577007E5EDF /* ContentView.swift in Sources */,
+				F6C8D1FF285A35A5007E5EDF /* Config.swift in Sources */,
+				F6C8D209285A35A5007E5EDF /* PieTotalView.swift in Sources */,
+				F6C8D214285A35A5007E5EDF /* FocusField.swift in Sources */,
+				F6C8D1FE285A35A5007E5EDF /* ContentViewModel.swift in Sources */,
+				F6C8D213285A35A5007E5EDF /* HomeView.swift in Sources */,
+				F6C8D1FA285A35A5007E5EDF /* Decimal.swift in Sources */,
+				F6C8D200285A35A5007E5EDF /* MyDatePicker.swift in Sources */,
+				F6C8D210285A35A5007E5EDF /* SettingView.swift in Sources */,
+				F6C8D212285A35A5007E5EDF /* BudgetView.swift in Sources */,
+				F6C8D1FB285A35A5007E5EDF /* String.swift in Sources */,
+				F6C8D20F285A35A5007E5EDF /* DeleteView.swift in Sources */,
+				F6C8D204285A35A5007E5EDF /* InvoiceModel.swift in Sources */,
+				F6C8D201285A35A5007E5EDF /* Separator.swift in Sources */,
+				F6C8D1F7285A35A5007E5EDF /* Date.swift in Sources */,
 				F6C8D1C0285A3577007E5EDF /* FinanceApp.swift in Sources */,
+				F6C8D215285A35A5007E5EDF /* Repeated.swift in Sources */,
+				F6C8D1FD285A35A5007E5EDF /* Color.swift in Sources */,
+				F6C8D20A285A35A5007E5EDF /* BudgetOrderView.swift in Sources */,
+				F6C8D20B285A35A5007E5EDF /* HeaderView.swift in Sources */,
+				F6C8D208285A35A5007E5EDF /* ArchivedBudgetsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
