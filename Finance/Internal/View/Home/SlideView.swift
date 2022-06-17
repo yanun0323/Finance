@@ -139,4 +139,11 @@ struct SlideView: View {
     } 
 }
 
+struct SlideView_Previews: PreviewProvider {
+    static var previews: some View {
+        SlideView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}
 

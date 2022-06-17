@@ -169,3 +169,12 @@ struct CreaterView: View {
         }
     }
 }
+
+
+struct CreaterView_Previews: PreviewProvider {
+    static var previews: some View {
+        CreaterView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}

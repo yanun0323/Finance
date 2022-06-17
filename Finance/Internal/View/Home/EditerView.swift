@@ -186,6 +186,17 @@ struct BudgetEditerView: View  {
     }
 }
 
+struct BudgetEditerView_Previews: PreviewProvider {
+    static var previews: some View {
+        BudgetEditerView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+        InvoiceEditerView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}
+
 struct InvoiceEditerView: View  {
     @EnvironmentObject var content: ContentViewModel
     @FocusState var focusedField: FocusField?

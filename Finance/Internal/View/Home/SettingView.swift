@@ -89,3 +89,11 @@ struct SettingView: View {
     }
     
 }
+
+struct SettingView_Preview: PreviewProvider {
+    static var previews: some View {
+        SettingView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}

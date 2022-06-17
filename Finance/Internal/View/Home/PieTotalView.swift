@@ -74,6 +74,20 @@ struct PieTotalView: View {
     }
 }
 
+struct PieTotalView_Preview: PreviewProvider {
+    static var previews: some View {
+        PieTotalView()
+            .environmentObject(ContentViewModel())
+            .frame(height: 150)
+            .previewLayout(.sizeThatFits)
+        PieView()
+            .environmentObject(ContentViewModel())
+            .frame(height: 150)
+            .previewLayout(.sizeThatFits)
+    }
+}
+
+
 struct PieView: View {
     @EnvironmentObject var content: ContentViewModel
     @State private var lastOffset: CGFloat = 0

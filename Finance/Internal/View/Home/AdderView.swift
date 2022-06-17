@@ -127,3 +127,10 @@ struct AdderView: View {
         }
     }
 }
+struct AdderView_Previews: PreviewProvider {
+    static var previews: some View {
+        AdderView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}

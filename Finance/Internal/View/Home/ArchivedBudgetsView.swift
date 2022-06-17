@@ -52,6 +52,17 @@ struct ArchivedBudgetsView: View {
     }
 }
 
+struct ArchivedBudgetsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArchivedBudgetsView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+        ArchivedListView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}
+
 struct ArchivedListView: View {
     @EnvironmentObject var content:ContentViewModel
     

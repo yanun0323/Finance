@@ -69,3 +69,11 @@ struct BudgetDeleteView: View {
     }
 }
 
+struct BudgetDeleteView_Previews: PreviewProvider {
+    static var previews: some View {
+        BudgetDeleteView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}
+

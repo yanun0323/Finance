@@ -65,3 +65,11 @@ struct ArchivedView: View {
     }
 }
 
+
+struct ArchivedView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArchivedView()
+            .environmentObject(ContentViewModel())
+            .previewLayout(.sizeThatFits)
+    }
+}
