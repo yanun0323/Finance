@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Yanun on 2022/5/10.
 //
@@ -14,10 +14,10 @@ struct BudgetDeleteView: View {
     @State private var name = ""
     let gap: CGFloat = 1
     let half: CGFloat = 150
-    
+
     var body: some View {
-        VStack(alignment: .center ,spacing: gap){
-            if !content.isBudgetsEmpty{
+        VStack(alignment: .center, spacing: gap) {
+            if !content.isBudgetsEmpty {
                 VStack(spacing: 10) {
                     Text("確定要刪除卡片？")
                         .fontWeight(.medium)
@@ -31,7 +31,7 @@ struct BudgetDeleteView: View {
                 .padding()
                 .frame(width: half+half+gap)
                 .background(Color.theme.background.opacity(0.9))
-                HStack(spacing: gap){
+                HStack(spacing: gap) {
                     Button(action: {
                         content.Dismiss()
                     }, label: {
@@ -44,7 +44,7 @@ struct BudgetDeleteView: View {
                     })
                     Button(role: .destructive, action: {
                         Deleted = true
-                        withAnimation(Config.deafult){
+                        withAnimation(Config.deafult) {
                             content.budgets.remove(at: content.budgetIndex)
                             content.budgetIndex -= (content.budgetIndex == 0 ? 0 : 1)
                             content.Dismiss()
@@ -62,7 +62,7 @@ struct BudgetDeleteView: View {
         .font(.title3)
         .background(Color.theme.secondary.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: Config.cornerRadius))
-        .onAppear{
+        .onAppear {
             color = content.currentColor
             name = content.currentBudget.name
         }
@@ -76,4 +76,3 @@ struct BudgetDeleteView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
     }
 }
-

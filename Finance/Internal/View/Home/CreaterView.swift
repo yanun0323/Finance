@@ -9,16 +9,17 @@ struct CreaterView: View {
     @State var inputDateStart = Date.now
     @State var inputDateEnd = Date.now
     @State var inputRepeated: Repeated = .month
+    @State var inputRepeatedUnit: Int = 1
     
     @State var created = false
 
-    
     let rowHeight: CGFloat = 35
     
     private var blockAdd: Bool {
         let budget = Decimal(string: inputBudget)
         return inputName.isEmpty || budget == nil || budget == 0
     }
+
     private var blockEnd: Bool {
         inputRepeated != .none
     }
@@ -41,29 +42,24 @@ struct CreaterView: View {
                 }
                 .padding()
                 
-                HStack{
+                HStack {
                     Text("名稱").fontWeight(.medium)
                     MyTextField(text: $inputName, description: "輸入卡片名稱", alignment: .trailing, keyboard: .default)
                         .frame(height: rowHeight)
                         .focused($focusedField, equals: .field)
-                        .onTapGesture {
-                            return
-                        }
+                        .onTapGesture {}
                 }.padding(.horizontal)
                 
-                
-                HStack{
+                HStack {
                     Text("預算").fontWeight(.medium)
                     MyTextField(text: $inputBudget, description: "輸入預算", alignment: .trailing, keyboard: .decimalPad)
                         .frame(height: rowHeight)
                         .focused($focusedField, equals: .other)
-                        .onTapGesture {
-                            return
-                        }
+                        .onTapGesture {}
                 }.padding(.horizontal)
                 
-                HStack{
-                    HStack{
+                HStack {
+                    HStack {
                         Text("顏色").fontWeight(.medium)
                         Spacer()
                         Menu(content: {
@@ -79,9 +75,23 @@ struct CreaterView: View {
                         })
                         Spacer()
                     }.transition(.opacity)
-                    HStack{
+                    HStack {
                         Text("重複").fontWeight(.medium)
                         Spacer()
+                        if inputRepeated != .forever && inputRepeated != .none {
+                            Menu(content: {
+                                Picker(selection: $inputRepeatedUnit, content: {
+                                    ForEach(1 ..< 5) { value in
+                                        Text(value.description).tag(value)
+                                    }
+                                }, label: {})
+                            }, label: {
+                                Text(inputRepeatedUnit.description)
+                                    .font(.headline)
+                                    .foregroundColor(inputColor.render)
+                                    .monospacedDigit()
+                            })
+                        }
                         Menu(content: {
                             Picker(selection: $inputRepeated, content: {
                                 ForEach(Repeated.allCases) { value in
@@ -92,12 +102,11 @@ struct CreaterView: View {
                             Text(inputRepeated.name)
                                 .font(.headline)
                                 .foregroundColor(inputColor.render)
-                                .padding(.horizontal)
+                                .frame(width: 50)
                         })
+                        .animation(.none, value: inputRepeated)
                     }
                 }.padding()
-                
-                
                 
                 HStack {
                     Text("開始日期").fontWeight(.medium)
@@ -113,7 +122,7 @@ struct CreaterView: View {
                 HStack {
                     Text("結束日期").fontWeight(.medium).foregroundColor(blockEnd ? .theme.secondary : .theme.primary)
                     Spacer()
-                    MyDateRangePicker(datePicked: $inputDateEnd,start:inputDateStart, end: nil, color: inputColor.render)
+                    MyDateRangePicker(datePicked: $inputDateEnd, start: inputDateStart, end: nil, color: inputColor.render)
                         .font(.title3)
                         .foregroundColor(blockEnd ? .theme.secondary : .theme.primary)
                         .padding(.horizontal)
@@ -137,7 +146,7 @@ struct CreaterView: View {
                     dateEnd: inputRepeated == .none || inputRepeated == .forever ? nil : inputDateEnd,
                     repeate: inputRepeated,
                     invoices: [:])
-                withAnimation(Config.deafult){
+                withAnimation(Config.deafult) {
                     content.budgets.append(budget)
                     content.Dismiss()
                 }
@@ -145,7 +154,7 @@ struct CreaterView: View {
                 Rectangle()
                     .foregroundColor(.theme.background.opacity(0.9))
                     .frame(maxHeight: Config.buttonHeight)
-                    .overlay{
+                    .overlay {
                         Text("新增")
                             .font(.title3)
                             .fontWeight(.regular)
@@ -164,12 +173,11 @@ struct CreaterView: View {
             content.isDatePickerShown = false
             UIApplication.shared.DismissKeyboard()
         }
-        .onAppear{
+        .onAppear {
             self.focusedField = .field
         }
     }
 }
-
 
 struct CreaterView_Previews: PreviewProvider {
     static var previews: some View {

@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct HomeView: View{
+struct HomeView: View {
     @EnvironmentObject var content: ContentViewModel
     
     var body: some View {
-        ZStack{
-            VStack{
+        ZStack {
+            VStack {
                 VStack {
                     HeaderView()
                         .environmentObject(content)
@@ -14,7 +14,7 @@ struct HomeView: View{
                 .frame(height: 70)
                 
                 ZStack {
-                    if !content.isBudgetsEmpty{
+                    if !content.isBudgetsEmpty {
                         if !content.stack {
                             SlideView()
                                 .environmentObject(content)
@@ -23,7 +23,7 @@ struct HomeView: View{
                             Spacer()
                             Button(action: {
                                 if content.isCoverd { return }
-                                withAnimation(Config.slide){
+                                withAnimation(Config.slide) {
                                     content.showAdder = true
                                 }
                             }, label: {
@@ -43,16 +43,13 @@ struct HomeView: View{
                     }
                 }.edgesIgnoringSafeArea(.all)
                 
-                if content.isBudgetsEmpty {
-                   
-                }
+                if content.isBudgetsEmpty {}
                 
             }.padding(.bottom).zIndex(0).blur(radius: content.isCoverd ? Config.coverBlur : 0)
             
-            
             if content.isCoverd {
                 CoverView(action: {
-                    if  content.isKeyboardShown || content.isDatePickerShown {
+                    if content.isKeyboardShown || content.isDatePickerShown {
                         content.isDatePickerShown = false
                         UIApplication.shared.DismissKeyboard()
                         return
@@ -60,7 +57,6 @@ struct HomeView: View{
                     content.Dismiss()
                 }).edgesIgnoringSafeArea(.all).zIndex(1)
             }
-            
             
             ZStack {
                 if content.showBudgetContext {
@@ -77,7 +73,8 @@ struct HomeView: View{
                                     .environmentObject(content)
                                     .transition(.asymmetric(
                                         insertion: .scale(scale: 0.8).combined(with: .opacity),
-                                        removal: .scale(scale: 0.97).combined(with: .opacity)))
+                                        removal: .scale(scale: 0.97).combined(with: .opacity)
+                                    ))
                                     .frame(height: outer.size.width*0.63)
                                     .disabled(true)
                                     .onTapGesture {
@@ -94,8 +91,6 @@ struct HomeView: View{
             }.zIndex(2)
             
             ZStack {
-                
-                
                 if content.showBudgetEditer {
                     BudgetEditerView()
                         .environmentObject(content)
@@ -114,7 +109,6 @@ struct HomeView: View{
                         .transition(.opacity)
                 }
                 
-                
                 if content.showSetting {
                     SettingView()
                         .environmentObject(content)
@@ -127,7 +121,7 @@ struct HomeView: View{
                         .transition(.scale(scale: 0.95, anchor: .topTrailing).combined(with: .opacity))
                 }
                 
-                if content.showInvoiceEditer && content.currentInvoice.cost != 0{
+                if content.showInvoiceEditer && content.currentInvoice.cost != 0 {
                     InvoiceEditerView()
                         .environmentObject(content)
                         .transition(.move(edge: .bottom).combined(with: .opacity))
@@ -178,7 +172,7 @@ struct BudgetContextView: View {
         HStack {
             VStack {
                 Button(role: .cancel, action: {
-                    withAnimation(Config.deafult){
+                    withAnimation(Config.deafult) {
                         content.showBudgetContext = false
                         content.showBudgetEditer = true
                     }
@@ -200,7 +194,7 @@ struct BudgetContextView: View {
                 
                 if content.currentBudget.dateEnd != nil {
                     Button(action: {
-                        withAnimation(Config.deafult){
+                        withAnimation(Config.deafult) {
                             content.showBudgetContext = false
                             content.showArchived = true
                         }
@@ -222,7 +216,7 @@ struct BudgetContextView: View {
                 }
                 
                 Button(role: .destructive, action: {
-                    withAnimation(Config.deafult){
+                    withAnimation(Config.deafult) {
                         content.showBudgetContext = false
                         content.showBudgetDeleter = true
                     }
@@ -246,5 +240,3 @@ struct BudgetContextView: View {
         }
     }
 }
-
-

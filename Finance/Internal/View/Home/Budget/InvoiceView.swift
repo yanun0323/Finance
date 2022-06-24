@@ -5,7 +5,7 @@ import SwiftUI
 struct InvoiceView: View {
     @ObservedObject var content: ContentViewModel
     @ObservedObject var budget: BudgetModel
-    
+
     var body: some View {
         if budget.invoices == [:] {
             VStack {
@@ -18,27 +18,27 @@ struct InvoiceView: View {
                     }
             }
         } else {
-            List{
+            List {
                 ForEach(Array(budget.invoices.keys.enumerated()).sorted {
-                    return $0.element > $1.element
-                }
-                        , id: \.element){ (_, key) in
+                    $0.element > $1.element
+                },
+                id: \.element) { _, key in
                     if budget.invoices[key]?.count != 0 {
                         DateRowView(date: key)
                         ForEach(budget.invoices[key]!.reversed()) { invoice in
                             RowView(invoice: invoice)
-                                .swipeActions(edge: .trailing, allowsFullSwipe: false){
+                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                     HStack {
-                                        Button(role: .destructive ,action: {
+                                        Button(role: .destructive, action: {
                                             budget.RemoveInvoice(invoice)
                                             content.RefreshBudget()
                                         }, label: {
                                             Label("Delete", systemImage: "trash")
                                         })
-                                        Button(role: .none ,action: {
+                                        Button(role: .none, action: {
                                             if content.isCoverd { return }
                                             content.currentInvoice = invoice
-                                            withAnimation(Config.slide){
+                                            withAnimation(Config.slide) {
                                                 content.showInvoiceEditer = true
                                             }
                                         }, label: {
@@ -50,9 +50,9 @@ struct InvoiceView: View {
                         }
                     }
                 }
-                        .listRowSeparator(.hidden)
-                        .navigationBarHidden(true)
-                        .background(Color.clear)
+                .listRowSeparator(.hidden)
+                .navigationBarHidden(true)
+                .background(Color.clear)
             }
             .listStyle(.plain)
         }
@@ -64,8 +64,8 @@ struct DateRowView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .foregroundColor(.clear)
-            .overlay{
-                HStack{
+            .overlay {
+                HStack {
                     Text(date.String(format: "YYYY.MM.dd EE"))
                         .font(.system(.body, design: .rounded))
                         .fontWeight(.medium)
@@ -83,9 +83,9 @@ struct RowView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .foregroundColor(.clear)
-            .overlay{
+            .overlay {
                 HStack {
-                    Group{
+                    Group {
                         if invoice.description != nil {
                             Text(invoice.description!)
                                 .fontWeight(.medium)
@@ -101,11 +101,10 @@ struct RowView: View {
                     .multilineTextAlignment(.trailing)
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.theme.primary)
-    
+
                 }.padding(.horizontal)
             }
             .listRowBackground(Color.clear)
             .padding(.horizontal)
     }
 }
-

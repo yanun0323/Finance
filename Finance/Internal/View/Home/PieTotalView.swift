@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Yanun on 2022/5/16.
 //
@@ -11,24 +11,25 @@ struct PieTotalView: View {
     @EnvironmentObject var content: ContentViewModel
     private let rowHeight: CGFloat = 15
     
-    private var thisMonth: String { Date.now.String(format: "YYYYMM") } 
-    private var thisMonthCost: Decimal{
+    private var thisMonth: String { Date.now.String(format: "YYYYMM") }
+    private var thisMonthCost: Decimal {
         var all: Decimal = 0
         for budget in content.budgets {
             all += budget.monthCost[thisMonth] ?? 0
         }
         return all
     }
+
     var body: some View {
-        GeometryReader{ outer in 
-            HStack{
-                ZStack{
+        GeometryReader { outer in
+            HStack {
+                ZStack {
                     PieView()
                         .environmentObject(content)
-                    VStack(spacing: 5){
+                    VStack(spacing: 5) {
                         Text("本月支出")
                             .font(.system(.subheadline, design: .rounded))
-                        Text("$"+thisMonthCost.description)
+                        Text("$" + thisMonthCost.description)
                             .font(.title3)
                             .fontWeight(.semibold)
                             .monospacedDigit()
@@ -39,12 +40,12 @@ struct PieTotalView: View {
                 
                 Rectangle()
                     .foregroundColor(.theme.background)
-                    .overlay{
-                        ScrollView(.vertical, showsIndicators: false){
+                    .overlay {
+                        ScrollView(.vertical, showsIndicators: false) {
                             HStack {
-                                VStack(spacing: rowHeight){
-                                    ForEach(content.budgets){ budget in 
-                                        HStack{
+                                VStack(spacing: rowHeight) {
+                                    ForEach(content.budgets) { budget in
+                                        HStack {
                                             Image(systemName: "circle.fill")
                                                 .font(.caption2)
                                                 .foregroundColor(budget.color.render)
@@ -56,7 +57,7 @@ struct PieTotalView: View {
                                                 .foregroundColor(.theme.primary)
                                         }
                                         .onTapGesture {
-                                            withAnimation(Config.deafult){
+                                            withAnimation(Config.deafult) {
                                                 content.budgetIndex = content.IndexOf(budget: budget)
                                             }
                                         }
@@ -68,7 +69,6 @@ struct PieTotalView: View {
                             .padding(.horizontal)
                         }
                     }
-                
             }
         }
     }
@@ -87,16 +87,15 @@ struct PieTotalView_Preview: PreviewProvider {
     }
 }
 
-
 struct PieView: View {
     @EnvironmentObject var content: ContentViewModel
     @State private var lastOffset: CGFloat = 0
     @State private var offset: CGFloat = 0
-    @State private var mapOffset: Dictionary<UUID, CGFloat> = [:]
+    @State private var mapOffset: [UUID: CGFloat] = [:]
     private let ringWidth: CGFloat = 15
     
-    private var thisMonth: String { Date.now.String(format: Date.MonthKeyFormat()) } 
-    private var thisMonthCost: Decimal{
+    private var thisMonth: String { Date.now.String(format: Date.MonthKeyFormat()) }
+    private var thisMonthCost: Decimal {
         var all: Decimal = 0
         for budget in content.budgets {
             all += budget.monthCost[thisMonth] ?? 0
@@ -106,9 +105,9 @@ struct PieView: View {
     
     var body: some View {
         ZStack {
-            ForEach(content.budgets){ budget in
+            ForEach(content.budgets) { budget in
                 Circle()
-                    .trim(from: getStartPos(budget: budget) , 
+                    .trim(from: getStartPos(budget: budget),
                           to: getEndPos(budget: budget))
                     .stroke(budget.color.render, lineWidth: ringWidth)
             }

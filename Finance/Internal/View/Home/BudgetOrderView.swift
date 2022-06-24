@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct BudgetOrderView: View {
-    @EnvironmentObject var content:ContentViewModel
+    @EnvironmentObject var content: ContentViewModel
     @State var editMode: EditMode = .active
     var body: some View {
         VStack(spacing: 1) {
-            VStack{
+            VStack {
                 HStack {
                     Button(action: {
-                        withAnimation(Config.deafult){
+                        withAnimation(Config.deafult) {
                             content.showBudgetOrderer = false
                             content.showSetting = true
                         }
@@ -23,7 +23,7 @@ struct BudgetOrderView: View {
                         .foregroundColor(.theme.primary)
                     Spacer()
                 }.padding()
-                
+
                 ListView()
                     .environmentObject(content)
                     .environment(\.editMode, self.$editMode)
@@ -38,12 +38,12 @@ struct BudgetOrderView: View {
 }
 
 struct ListView: View {
-    @EnvironmentObject var content:ContentViewModel
-    
+    @EnvironmentObject var content: ContentViewModel
+
     var body: some View {
         List {
             ForEach(content.budgets) { budget in
-                HStack{
+                HStack {
                     Spacer()
                     Text(budget.name)
                         .fontWeight(.medium)
@@ -63,7 +63,7 @@ struct ListView: View {
         .background(Color.clear)
         .padding(.horizontal)
     }
-    
+
     func move(from source: IndexSet, to destination: Int) {
         content.budgets.move(fromOffsets: source, toOffset: destination)
     }

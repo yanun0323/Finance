@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Yanun on 2022/6/5.
 //
@@ -11,13 +11,13 @@ struct ArchivedBudgetsView: View {
     @EnvironmentObject var content: ContentViewModel
     var body: some View {
         VStack(spacing: 1) {
-            VStack{
+            VStack {
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(height: 50)
                 HStack {
                     Button(action: {
-                        withAnimation(Config.deafult){
+                        withAnimation(Config.deafult) {
                             content.showArchivedBudgets = false
                             content.showSetting = true
                         }
@@ -31,9 +31,9 @@ struct ArchivedBudgetsView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.theme.primary)
                     Spacer()
-                    
+
                 }.padding()
-                
+
                 if content.archivedBudgets.isEmpty {
                     Text("沒有任何過期卡片")
                         .font(.title3)
@@ -42,7 +42,7 @@ struct ArchivedBudgetsView: View {
                 } else {
                     ArchivedListView()
                 }
-                
+
                 Spacer()
             }
             .foregroundColor(.theme.primary)
@@ -64,15 +64,15 @@ struct ArchivedBudgetsView_Previews: PreviewProvider {
 }
 
 struct ArchivedListView: View {
-    @EnvironmentObject var content:ContentViewModel
-    
+    @EnvironmentObject var content: ContentViewModel
+
     var body: some View {
         List {
             ForEach(Array(content.archivedBudgets.keys.enumerated()).sorted {
-                return $0.element > $1.element
-            }, id: \.element) { (_, date) in
+                $0.element > $1.element
+            }, id: \.element) { _, date in
                 if let budget = content.archivedBudgets[date] {
-                    HStack{
+                    HStack {
                         Spacer()
                         Text(budget.name)
                             .fontWeight(.medium)

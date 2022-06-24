@@ -11,7 +11,7 @@ struct SettingView: View {
                         .fontWeight(.bold)
                     Spacer()
                     Button(action: {
-                        withAnimation(Config.deafult){
+                        withAnimation(Config.deafult) {
                             content.Dismiss()
                         }
                     }, label: {
@@ -20,8 +20,6 @@ struct SettingView: View {
                     })
                 }.padding().padding(.bottom)
                 
-                
-                
                 Toggle(isOn: $content.hideBudgetTime, label: {
                     Text("隱藏卡片日期")
                         .font(.title3)
@@ -29,7 +27,7 @@ struct SettingView: View {
                 }).padding()
                 
                 Button(action: {
-                    withAnimation(Config.deafult){
+                    withAnimation(Config.deafult) {
                         content.showSetting = false
                         content.showBudgetOrderer = true
                     }
@@ -47,7 +45,7 @@ struct SettingView: View {
                 .padding()
                 
                 Button(action: {
-                    withAnimation(Config.deafult){
+                    withAnimation(Config.deafult) {
                         content.showSetting = false
                         content.showArchivedBudgets = true
                     }
@@ -76,7 +74,6 @@ struct SettingView: View {
                 }.padding()
                 
                 Spacer()
-                
             }
             .foregroundColor(.theme.primary)
             .frame(width: 250)
@@ -87,7 +84,6 @@ struct SettingView: View {
             Spacer()
         }
     }
-    
 }
 
 struct SettingView_Preview: PreviewProvider {

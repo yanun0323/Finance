@@ -115,7 +115,6 @@
 		F6C8D1BE285A3576007E5EDF /* Finance */ = {
 			isa = PBXGroup;
 			children = (
-				F6C8D1F3285A35A5007E5EDF /* Enum */,
 				F6C8D1CD285A35A5007E5EDF /* Extension */,
 				F6C8D1D5285A35A5007E5EDF /* Internal */,
 				F6C8D1BF285A3577007E5EDF /* FinanceApp.swift */,
@@ -151,11 +150,11 @@
 		F6C8D1D5285A35A5007E5EDF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				F6C8D1D6285A35A5007E5EDF /* ViewModel */,
 				F6C8D1D8285A35A5007E5EDF /* Config */,
 				F6C8D1DA285A35A5007E5EDF /* Component */,
 				F6C8D1DE285A35A5007E5EDF /* Model */,
 				F6C8D1E1285A35A5007E5EDF /* View */,
+				F6C8D1D6285A35A5007E5EDF /* ViewModel */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -189,6 +188,7 @@
 		F6C8D1DE285A35A5007E5EDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6C8D1F3285A35A5007E5EDF /* Enum */,
 				F6C8D1DF285A35A5007E5EDF /* BudgetModel.swift */,
 				F6C8D1E0285A35A5007E5EDF /* InvoiceModel.swift */,
 			);

@@ -1,13 +1,13 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Yanun on 2022/5/9.
 //
 
 import SwiftUI
 
-struct BudgetEditerView: View  {
+struct BudgetEditerView: View {
     @EnvironmentObject var content: ContentViewModel
     @FocusState var focusedField: FocusField?
     @State var inputName: String = ""
@@ -24,14 +24,15 @@ struct BudgetEditerView: View  {
     private var blockEnd: Bool {
         inputRepeated != .none
     }
+
     private var blockAdd: Bool {
         let budget = Decimal(string: inputBudget)
         return inputName.isEmpty || budget == nil || budget == 0
     }
     
     var body: some View {
-        VStack(spacing: 1){
-            VStack(spacing: 5){
+        VStack(spacing: 1) {
+            VStack(spacing: 5) {
                 HStack {
                     Text("編輯預算卡")
                         .font(.title)
@@ -39,7 +40,7 @@ struct BudgetEditerView: View  {
                         .foregroundColor(.theme.primary)
                     Spacer()
                     Button(action: {
-                        withAnimation(Config.deafult){
+                        withAnimation(Config.deafult) {
                             content.Dismiss()
                         }
                     }, label: {
@@ -49,29 +50,24 @@ struct BudgetEditerView: View  {
                 }
                 .padding()
                 
-                HStack{
+                HStack {
                     Text("名稱").fontWeight(.medium)
                     MyTextField(text: $inputName, description: "輸入卡片名稱", alignment: .trailing, keyboard: .default)
                         .frame(height: rowHeight)
                         .focused($focusedField, equals: .field)
-                        .onTapGesture {
-                            return
-                        }
+                        .onTapGesture {}
                 }.padding(.horizontal)
                 
-                
-                HStack{
+                HStack {
                     Text("預算").fontWeight(.medium)
                     MyTextField(text: $inputBudget, description: "輸入預算", alignment: .trailing, keyboard: .decimalPad)
                         .frame(height: rowHeight)
                         .focused($focusedField, equals: .other)
-                        .onTapGesture {
-                            return
-                        }
+                        .onTapGesture {}
                 }.padding(.horizontal)
                 
-                HStack{
-                    HStack{
+                HStack {
+                    HStack {
                         Text("顏色").fontWeight(.medium)
                         Spacer()
                         Menu(content: {
@@ -87,7 +83,7 @@ struct BudgetEditerView: View  {
                         })
                         Spacer()
                     }
-                    HStack{
+                    HStack {
                         Text("重複").fontWeight(.medium)
                         Spacer()
                         Menu(content: {
@@ -105,8 +101,6 @@ struct BudgetEditerView: View  {
                     }
                 }.padding()
                 
-                
-                
                 HStack {
                     Text("開始日期").fontWeight(.medium)
                     Spacer()
@@ -121,7 +115,7 @@ struct BudgetEditerView: View  {
                 HStack {
                     Text("結束日期").fontWeight(.medium).foregroundColor(blockEnd ? .theme.secondary : .theme.primary)
                     Spacer()
-                    MyDateRangePicker(datePicked: $inputDateEnd, start:inputDateStart, end: nil, color: inputColor.render)
+                    MyDateRangePicker(datePicked: $inputDateEnd, start: inputDateStart, end: nil, color: inputColor.render)
                         .font(.title3)
                         .foregroundColor(blockEnd ? .theme.secondary : .theme.primary)
                         .padding(.horizontal)
@@ -146,7 +140,7 @@ struct BudgetEditerView: View  {
                     invoices: content.currentBudget.invoices
                 )
                 
-                withAnimation(Config.deafult){
+                withAnimation(Config.deafult) {
                     created = true
                     content.budgets[content.budgetIndex] = budget
                     content.showBudgetEditer = false
@@ -155,7 +149,7 @@ struct BudgetEditerView: View  {
                 Rectangle()
                     .foregroundColor(.theme.background.opacity(0.9))
                     .frame(maxHeight: Config.buttonHeight)
-                    .overlay{
+                    .overlay {
                         Text("修改")
                             .fontWeight(.regular)
                             .foregroundColor(blockAdd ?
@@ -168,7 +162,7 @@ struct BudgetEditerView: View  {
         .foregroundColor(Color.theme.primary)
         .cornerRadius(Config.cornerRadius)
         .padding()
-        .onAppear{
+        .onAppear {
             inputName = content.currentBudget.name
             inputBudget = content.currentBudget.budget.description
             inputColor = content.currentBudget.color
@@ -180,7 +174,7 @@ struct BudgetEditerView: View  {
             content.isDatePickerShown = false
             UIApplication.shared.DismissKeyboard()
         }
-        .onAppear{
+        .onAppear {
             self.focusedField = .field
         }
     }
@@ -197,7 +191,7 @@ struct BudgetEditerView_Previews: PreviewProvider {
     }
 }
 
-struct InvoiceEditerView: View  {
+struct InvoiceEditerView: View {
     @EnvironmentObject var content: ContentViewModel
     @FocusState var focusedField: FocusField?
     @State var inputDate = Date.now
@@ -215,8 +209,8 @@ struct InvoiceEditerView: View  {
         VStack {
             Spacer()
             
-            VStack(spacing: 1){
-                VStack{
+            VStack(spacing: 1) {
+                VStack {
                     HStack {
                         Text("修改花費")
                             .font(.title)
@@ -246,7 +240,7 @@ struct InvoiceEditerView: View  {
                             }
                     }.padding(.horizontal)
                     
-                    HStack{
+                    HStack {
                         Text("金額").fontWeight(.medium)
                         Spacer()
                         TextField("", text: $inputCost)
@@ -255,25 +249,21 @@ struct InvoiceEditerView: View  {
                             .multilineTextAlignment(.trailing)
                             .font(.title3)
                             .focused($focusedField, equals: .field)
-                            .placeholder(when: inputCost.isEmpty, alignment: .trailing){
+                            .placeholder(when: inputCost.isEmpty, alignment: .trailing) {
                                 Text("輸入花費金額")
                                     .foregroundColor(.theme.secondary)
                                     .padding()
                             }
-                            .onTapGesture {
-                                return
-                            }
+                            .onTapGesture {}
                     }.padding(.horizontal)
                     
-                    HStack{
+                    HStack {
                         Text("備註").fontWeight(.medium)
                         Spacer()
                         MyTextField(text: $inputDescription, description: "(可空白)", alignment: .trailing, keyboard: .default)
                             .font(.title3)
                             .focused($focusedField, equals: .other)
-                            .onTapGesture {
-                                return
-                            }
+                            .onTapGesture {}
                     }.padding([.horizontal, .bottom])
                 }.padding(.bottom)
                     .background(Color.theme.background.opacity(0.9))
@@ -282,7 +272,7 @@ struct InvoiceEditerView: View  {
                     let value = Decimal(string: inputCost) ?? 0
                     if value == 0 { return }
                     added = true
-                    withAnimation(Config.deafult){
+                    withAnimation(Config.deafult) {
                         let newInvoice = InvoiceModel(date: inputDate, cost: value, description: inputDescription)
                         content.currentBudget.EditInvoice(old: content.currentInvoice, new: newInvoice)
                         content.currentInvoice = InvoiceModel(date: Date.now, cost: 0)
@@ -292,14 +282,14 @@ struct InvoiceEditerView: View  {
                     Rectangle()
                         .foregroundColor(.theme.background.opacity(0.9))
                         .frame(maxHeight: Config.buttonHeight)
-                        .overlay{
+                        .overlay {
                             Text("修改")
                                 .fontWeight(.regular)
                                 .foregroundColor(blockAdd ?
-                                                    .theme.secondary : content.currentColor)
+                                    .theme.secondary : content.currentColor)
                         }
                 })
-                    .disabled(blockAdd || added)
+                .disabled(blockAdd || added)
             }
             .font(.title3)
             .lineLimit(1)
@@ -310,7 +300,7 @@ struct InvoiceEditerView: View  {
                 content.isDatePickerShown = false
                 UIApplication.shared.DismissKeyboard()
             }
-            .onAppear{
+            .onAppear {
                 self.focusedField = .field
                 inputDate = content.currentInvoice.date
                 inputCost = content.currentInvoice.cost.description

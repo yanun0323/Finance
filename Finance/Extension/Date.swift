@@ -1,17 +1,17 @@
 import SwiftUI
 
 extension Date {
-    static public func Format(date: String, format: String) -> Date? {
+    public static func Format(date: String, format: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        return dateFormatter.date(from:date)
+        return dateFormatter.date(from: date)
     }
     
-    static public func DayKeyFormat() -> String {
+    public static func DayKeyFormat() -> String {
         "YYYYMMdd"
     }
     
-    static public func MonthKeyFormat() -> String {
+    public static func MonthKeyFormat() -> String {
         "YYYYMM"
     }
     
@@ -21,6 +21,7 @@ extension Date {
         dateFormatter.locale = Locale(identifier: "zh_Hant_TW")
         return dateFormatter.string(from: self)
     }
+
     func DayKey() -> Date {
         return Date.Format(date: self.String(format: Date.DayKeyFormat()), format: Date.DayKeyFormat())!
     }

@@ -14,10 +14,10 @@ struct ArchivedView: View {
     @State private var name = ""
     let gap: CGFloat = 1
     let half: CGFloat = 150
-    
+
     var body: some View {
-        VStack(alignment: .center ,spacing: gap){
-            if !content.isBudgetsEmpty{
+        VStack(alignment: .center, spacing: gap) {
+            if !content.isBudgetsEmpty {
                 VStack(spacing: 10) {
                     Text("確定要封存卡片？")
                         .fontWeight(.medium)
@@ -31,7 +31,7 @@ struct ArchivedView: View {
                 .padding()
                 .frame(width: half+half+gap)
                 .background(Color.theme.background.opacity(0.9))
-                HStack(spacing: gap){
+                HStack(spacing: gap) {
                     Button(action: {
                         content.Dismiss()
                     }, label: {
@@ -58,13 +58,12 @@ struct ArchivedView: View {
         .font(.title3)
         .background(Color.theme.secondary.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: Config.cornerRadius))
-        .onAppear{
+        .onAppear {
             color = content.currentColor
             name = content.currentBudget.name
         }
     }
 }
-
 
 struct ArchivedView_Previews: PreviewProvider {
     static var previews: some View {

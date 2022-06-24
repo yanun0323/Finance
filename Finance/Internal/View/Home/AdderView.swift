@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Yanun on 2022/5/8.
 //
@@ -21,13 +21,12 @@ struct AdderView: View {
         return inputCost.isEmpty || cost == nil || cost == 0
     }
     
-    
     var body: some View {
         VStack {
             Spacer()
             
-            VStack(spacing: 1){
-                VStack{
+            VStack(spacing: 1) {
+                VStack {
                     HStack {
                         Text("新增一筆花費")
                             .font(.title)
@@ -57,7 +56,7 @@ struct AdderView: View {
                             }
                     }.padding(.horizontal)
                     
-                    HStack{
+                    HStack {
                         Text("金額").fontWeight(.medium)
                         Spacer()
                         TextField("", text: $inputCost)
@@ -66,28 +65,24 @@ struct AdderView: View {
                             .multilineTextAlignment(.trailing)
                             .font(.title3)
                             .focused($focusedField, equals: .field)
-                            .placeholder(when: inputCost.isEmpty, alignment: .trailing){
+                            .placeholder(when: inputCost.isEmpty, alignment: .trailing) {
                                 Text("輸入花費金額")
                                     .foregroundColor(.theme.secondary)
                                     .padding()
                             }
-                            .onTapGesture {
-                                return
-                            }
+                            .onTapGesture {}
                     }.padding(.horizontal)
                     
-                    HStack{
+                    HStack {
                         Text("備註").fontWeight(.medium)
                         Spacer()
                         MyTextField(text: $inputDescription, description: "(可空白)", alignment: .trailing, keyboard: .default)
                             .font(.title3)
                             .focused($focusedField, equals: .other)
-                            .onTapGesture {
-                                return
-                            }
+                            .onTapGesture {}
                     }.padding([.horizontal, .bottom])
                 }.padding(.bottom)
-                .background(Color.theme.background.opacity(0.9))
+                    .background(Color.theme.background.opacity(0.9))
                 
                 Button(action: {
                     let value = Decimal(string: inputCost) ?? 0
@@ -102,7 +97,7 @@ struct AdderView: View {
                     Rectangle()
                         .foregroundColor(.theme.background.opacity(0.9))
                         .frame(maxHeight: Config.buttonHeight)
-                        .overlay{
+                        .overlay {
                             Text("新增")
                                 .fontWeight(.regular)
                                 .foregroundColor(blockAdd ?
@@ -120,13 +115,13 @@ struct AdderView: View {
                 content.isDatePickerShown = false
                 UIApplication.shared.DismissKeyboard()
             }
-            .onAppear{
+            .onAppear {
                 self.focusedField = .field
             }
-            
         }
     }
 }
+
 struct AdderView_Previews: PreviewProvider {
     static var previews: some View {
         AdderView()

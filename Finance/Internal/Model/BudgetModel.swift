@@ -12,19 +12,21 @@ class BudgetModel: ObservableObject, Identifiable, Equatable {
     @Published var color: CardColor
     @Published var budget: Decimal
     @Published var cost: Decimal = 0
-    @Published var invoices: Dictionary<Date,[InvoiceModel]> 
+    @Published var invoices: [Date: [InvoiceModel]]
     @Published var dateStart: Date
     @Published var dateEnd: Date?
     @Published var repeated: Repeated
-    @Published var monthCost: Dictionary<String, Decimal> 
+    @Published var repeatedUint: Int = 1
+    @Published var monthCost: [String: Decimal]
     
-    init(name nm: String, 
-         budget bdgt: Decimal, 
-         color cardColor: CardColor = .orange, 
-         dateStart start: Date = Date.now, 
-         dateEnd end: Date? = nil, 
+    init(name nm: String,
+         budget bdgt: Decimal,
+         color cardColor: CardColor = .orange,
+         dateStart start: Date = Date.now,
+         dateEnd end: Date? = nil,
          repeate re: Repeated = .forever,
-         invoices invs: Dictionary<Date, [InvoiceModel]> = [:]) {
+         invoices invs: [Date: [InvoiceModel]] = [:])
+    {
         id = UUID()
         name = nm
         budget = bdgt
@@ -36,8 +38,8 @@ class BudgetModel: ObservableObject, Identifiable, Equatable {
         cost = 0
         monthCost = [:]
         
-        invs.forEach({ (_, arr) in
-            arr.forEach({ inv in 
+        invs.forEach { _, arr in
+            arr.forEach { inv in
                 cost += inv.cost
                 let month = inv.date.MonthKey()
                 if let exite = monthCost[month] {
@@ -45,8 +47,8 @@ class BudgetModel: ObservableObject, Identifiable, Equatable {
                 } else {
                     monthCost[month] = inv.cost
                 }
-            })
-        })
+            }
+        }
     }
     
     func AddInvoice(_ invoice: InvoiceModel) {
@@ -54,7 +56,7 @@ class BudgetModel: ObservableObject, Identifiable, Equatable {
         let month = invoice.date.MonthKey()
         if invoices[date] == nil {
             invoices[date] = []
-        } 
+        }
         withAnimation(Config.deafult) {
             invoices[date]!.append(invoice)
             cost += invoice.cost
@@ -76,8 +78,8 @@ class BudgetModel: ObservableObject, Identifiable, Equatable {
             return
         }
         
-        if let index = invoices[date]?.firstIndex(where: {$0.id == invoice.id}){
-            withAnimation(Config.deafult){
+        if let index = invoices[date]?.firstIndex(where: { $0.id == invoice.id }) {
+            withAnimation(Config.deafult) {
                 let removed = invoices[date]!.remove(at: index)
                 cost -= removed.cost
                 monthCost[month]! -= removed.cost
@@ -85,8 +87,8 @@ class BudgetModel: ObservableObject, Identifiable, Equatable {
         }
     }
     
-    func EditInvoice(old: InvoiceModel ,new: InvoiceModel) {
-        self.RemoveInvoice(old)
-        self.AddInvoice(new)
+    func EditInvoice(old: InvoiceModel, new: InvoiceModel) {
+        RemoveInvoice(old)
+        AddInvoice(new)
     }
 }

@@ -12,11 +12,11 @@ struct Separator: View {
         case vertical
         case horizontal
     }
+
     let direction: Direction
     var color: Color?
     var length: CGFloat?
-    
-    
+
     var body: some View {
         RoundedRectangle(cornerRadius: length ?? 0)
             .foregroundColor(color ?? .black)

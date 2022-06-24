@@ -42,13 +42,11 @@ class ContentViewModel: ObservableObject {
     
     var isCoverd: Bool {
         showBudgetContext || showArchivedBudgets || showBudgetDeleter || showBudgetEditer || showCreater || showBudgetOrderer ||
-        showSetting || showAdder || showInvoiceEditer || showArchived
+            showSetting || showAdder || showInvoiceEditer || showArchived
     }
     
-    
-    
     func Dismiss() {
-        withAnimation(Config.deafult){
+        withAnimation(Config.deafult) {
             showArchivedBudgets = false
             showBudgetContext = false
             showBudgetOrderer = false
@@ -90,21 +88,20 @@ class ContentViewModel: ObservableObject {
         }
     }
     
-    
     // User Custom
     @Published var stack = false
     @Published var hideBudgetTime = false
     
     // User Data
-    @Published var archivedBudgets: Dictionary<Date, BudgetModel> = [:]
+    @Published var archivedBudgets: [Date: BudgetModel] = [:]
     @Published var budgets: [BudgetModel] = [
-        BudgetModel(name: "伙食費", 
-                    budget: 15000, 
-                    color: .cyan, 
-                    dateStart: Date.now, 
-                    dateEnd: nil, 
+        BudgetModel(name: "伙食費",
+                    budget: 15000,
+                    color: .cyan,
+                    dateStart: Date.now,
+                    dateEnd: nil,
                     repeate: .forever,
-                    invoices: [Date.now.DayKey():[
+                    invoices: [Date.now.DayKey(): [
                         InvoiceModel(date: Date.now, cost: 140, description: "午餐"),
                         InvoiceModel(date: Date.now, cost: 220, description: "晚餐"),
                         InvoiceModel(date: Date.now, cost: 110, description: "早午餐"),
@@ -116,24 +113,24 @@ class ContentViewModel: ObservableObject {
                         InvoiceModel(date: Date.now, cost: 130, description: "早餐"),
                         InvoiceModel(date: Date.now, cost: 60, description: "飲料"),
                     ]]),
-        BudgetModel(name: "交通費", 
-                    budget: 3000, 
-                    color: .purple, 
-                    dateStart: Date.now, 
-                    dateEnd: nil, 
+        BudgetModel(name: "交通費",
+                    budget: 3000,
+                    color: .purple,
+                    dateStart: Date.now,
+                    dateEnd: nil,
                     repeate: .forever,
-                    invoices: [Date.now.DayKey():[
+                    invoices: [Date.now.DayKey(): [
                         InvoiceModel(date: Date.now, cost: 15, description: "公車"),
                         InvoiceModel(date: Date.now, cost: 1280, description: "捷運定期票"),
                         InvoiceModel(date: Date.now, cost: 110, description: "Uber"),
                     ]]),
-        BudgetModel(name: "娛樂費", 
-                    budget: 3000, 
-                    color: .black, 
-                    dateStart: Date.now, 
+        BudgetModel(name: "娛樂費",
+                    budget: 3000,
+                    color: .black,
+                    dateStart: Date.now,
                     dateEnd: nil,
                     repeate: .forever,
-                    invoices: [Date.now.DayKey():[
+                    invoices: [Date.now.DayKey(): [
                         InvoiceModel(date: Date.now, cost: 500, description: "課金"),
                         InvoiceModel(date: Date.now, cost: 330, description: "書"),
                     ]]),
@@ -143,7 +140,6 @@ class ContentViewModel: ObservableObject {
                     dateStart: Date.now,
                     dateEnd: nil,
                     repeate: .forever,
-                    invoices: [:])
+                    invoices: [:]),
     ]
 }
-

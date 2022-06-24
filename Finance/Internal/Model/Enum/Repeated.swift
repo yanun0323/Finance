@@ -1,13 +1,13 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Yanun on 2022/5/8.
 //
 
 import SwiftUI
 
-enum Repeated: Identifiable, CaseIterable{
+enum Repeated: Identifiable, CaseIterable {
     var id: String { self.name }
     case none
     case day
@@ -15,24 +15,24 @@ enum Repeated: Identifiable, CaseIterable{
     case month
     case year
     case forever
-    
+
     var name: String {
         switch self {
             case .none:
                 return "無"
             case .day:
-                return "每天"
+                return "天"
             case .week:
-                return "每週"
+                return "週"
             case .month:
-                return "每月"
+                return "月"
             case .year:
-                return "每年"
+                return "年"
             case .forever:
                 return "永久"
         }
     }
-    
+
     func DateOffset(date: Date) -> Date? {
         switch self {
             case .none:
@@ -50,4 +50,3 @@ enum Repeated: Identifiable, CaseIterable{
         }
     }
 }
-
